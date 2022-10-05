@@ -4,4 +4,4 @@
   (:use #:cl)
   (:export
    :read-feed
-   :feed-get-title))
+   :feed-get-entries))

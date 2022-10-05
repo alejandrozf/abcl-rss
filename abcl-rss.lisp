@@ -50,6 +50,9 @@
          (items (java:jcall to-array-method entries))
          (contents (map 'vector
                         (lambda (c)
-                          (java:jcall to-array-method (java:jcall get-contents-method c)))
+                          (map 'vector (lambda (d)
+                                         (java:jcall get-value-method d))
+                               (java:jcall to-array-method
+                                           (java:jcall get-contents-method c))))
                         items)))
     (values contents entries)))
